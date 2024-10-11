@@ -1,0 +1,3 @@
+egy közösségi felület, ahova a bejelentkezett felhasználók tudnak "posztolni"
+a közösségi felületen kell lennie egy bejelentkezés résznek, elhelyezése design kérdés
+üzenet váltás a két felhasználó között lekérdezéssel
