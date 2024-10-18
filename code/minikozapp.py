@@ -20,7 +20,13 @@ def uzi():
 
     message = tk.Toplevel()
     message.title("Üzenetváltás")
-    message.config(width=300, height=200)
+    message.config(width=400, height=600)
+
+    uzenet_var=tk.StringVar()
+
+    uzenet_entry = tk.Entry(message,textvariable = uzenet_var, font=('calibre',10,'normal'))
+
+    x= uzenet_var
 
     button_close = ttk.Button(
         message,
