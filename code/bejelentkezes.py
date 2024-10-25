@@ -1,6 +1,7 @@
 from tkinter import*
 from tkinter import Tk, BOTH
 from tkinter.ttk import Frame, Label, Style
+import fal
 
 root = Tk()
 root.title("Mini-közösségi app")
@@ -11,12 +12,14 @@ felhasznalo = Entry(root, width=50, bg="white", fg="black", borderwidth=10)
 felhasznalo.insert(0, "Felhasználónév")
 felhasznalo.place(relx=0.5,rely=0.1,anchor=N)
 
+
 jelszo= Entry(root, width=50, bg="white",fg="black", borderwidth=10)
 jelszo.insert(0, "Jelszó")
 jelszo.place(relx=0.5,rely=0.25,anchor=N)
 
+
 bejeadatok = []
-with open('./bejelentkezes.txt','r', encoding='utf-8')as file:
+with open('./code/bejelentkezes.txt','r', encoding='utf-8')as file:
     for i in file:
         adat = i.strip().split(';')
         bejeadatok.append({
@@ -26,19 +29,14 @@ with open('./bejelentkezes.txt','r', encoding='utf-8')as file:
 
 
 def bejelentkezes():
-    global felhasznalo
-    global jelszo
+    ent = felhasznalo.get()
+    jeent = jelszo.get()
     global bejeadatok
     index = 0
     for i in bejeadatok:
-        if felhasznalo == i['felnev'] and jelszo == i['jelszo']:
-            print("asd")
-            index = i
-            asd=Tk()
-            asd.title("új")
-            asd.geometry("400x400")
-            asd.mainloop()
-    
+        if ent == i['felnev'] and jeent == i['jelszo']:
+            fal.open_window(ent)
+            
     
 
 
