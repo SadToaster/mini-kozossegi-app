@@ -24,18 +24,33 @@ with open('./bejelentkezes.txt','r', encoding='utf-8')as file:
             'jelszo' : str(adat[1])
         })
 
-
+   
 def bejelentkezes():
     global felhasznalo
     global jelszo
     global bejeadatok
+    global funkciok
+    x=False
     for i in bejeadatok:
         if felhasznalo == i['felnev'] and jelszo == i['jelszo']:
-            print('asd')
+            funkciok = Tk() 
+            funkciok=Toplevel(root)
+            funkciok.title("Funkciok")
+            funkciok.config(width=300, height=200)
+            funkciok.mainloop()
+            x=True
+            break
+        else:
+            continue
+    
+    if x:
+        root.destroy()
+    
+            
+        
 
-bejelentkezes()
 
-button = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentkezes, fg="black", bg="white")
+button = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentkezes(), fg="black", bg="white")
 button.place(relx=0.5, rely=0.5, anchor=N)
 btn2 = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
 btn2.place(relx=0.5,rely=0.7, anchor=N)

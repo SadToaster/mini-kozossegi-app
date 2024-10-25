@@ -40,7 +40,7 @@ def reg():
         jelszo=jelsz.get()
         jelszobiztos=jelszbiztos.get()
         if jelszo==jelszobiztos:
-            with open("./Mr.Dalma/bejelentkezes.txt", "a", encoding="utf-8") as file:
+            with open("./code/bejelentkezes.txt", "a", encoding="utf-8") as file:
                 print(f"\n{felhasznalonev};{jelszo}", file=file)
                 
         else:
