@@ -8,11 +8,11 @@ root.geometry("800x400")
 root.configure(background="cadetblue")
 
 felhasznalo = Entry(root, width=50, bg="white", fg="black", borderwidth=10)
-felhasznalo.insert(0, "")
+felhasznalo.insert(0, "Felhasználónév")
 felhasznalo.place(relx=0.5,rely=0.1,anchor=N)
 
 jelszo= Entry(root, width=50, bg="white",fg="black", borderwidth=10)
-jelszo.insert(0, "")
+jelszo.insert(0, "Jelszó")
 jelszo.place(relx=0.5,rely=0.25,anchor=N)
 
 bejeadatok = []
@@ -29,6 +29,7 @@ def bejelentkezes():
     global felhasznalo
     global jelszo
     global bejeadatok
+<<<<<<< HEAD:code/dalma.py
     global funkciok
     x=False
     for i in bejeadatok:
@@ -48,12 +49,27 @@ def bejelentkezes():
     
             
         
+=======
+    index = 0
+    for i in bejeadatok:
+        if felhasznalo == i['felnev'] and jelszo == i['jelszo']:
+            print("asd")
+            index = i
+            asd=Tk()
+            asd.title("új")
+            asd.geometry("400x400")
+            asd.mainloop()
+    
+    
+
+>>>>>>> 9113b231e711a1b0f818804574635c0dc808e3ab:Mr.Dalma/dalma.py
 
 
 button = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentkezes(), fg="black", bg="white")
 button.place(relx=0.5, rely=0.5, anchor=N)
 btn2 = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
 btn2.place(relx=0.5,rely=0.7, anchor=N)
+
 
 
 root.mainloop()
