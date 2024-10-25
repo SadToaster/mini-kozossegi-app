@@ -1,0 +1,6 @@
+felhasználói funkciók elérésének oldala pipa
+üzenetváltó felület bejelentkezett felhasználók számára
+lekérdező gomb, ami az uzenetek txt fájlból beolvassa újra az üzeneteket
+üzenet jellemzőinek felépítése 
+felhasználó azonosító, maga az üzenet, sorszám, melyik chatbe
+dokumentáció
