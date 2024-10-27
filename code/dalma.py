@@ -32,27 +32,6 @@ def bejelentkezes():
     ent = felhasznalo.get()
     jeent = jelszo.get()
     global bejeadatok
-<<<<<<< HEAD:code/dalma.py
-    global funkciok
-    x=False
-    for i in bejeadatok:
-        if felhasznalo == i['felnev'] and jelszo == i['jelszo']:
-            funkciok = Tk() 
-            funkciok=Toplevel(root)
-            funkciok.title("Funkciok")
-            funkciok.config(width=300, height=200)
-            funkciok.mainloop()
-            x=True
-            break
-        else:
-            continue
-    
-    if x:
-        root.destroy()
-    
-            
-        
-=======
     index = 0
     for i in bejeadatok:
         if ent == i['felnev'] and jeent == i['jelszo']:
@@ -60,7 +39,6 @@ def bejelentkezes():
             
     
 
->>>>>>> 9113b231e711a1b0f818804574635c0dc808e3ab:Mr.Dalma/dalma.py
 
 
 button = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentkezes(), fg="black", bg="white")
