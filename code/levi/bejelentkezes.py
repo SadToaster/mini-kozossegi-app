@@ -19,7 +19,7 @@ jelszo.place(relx=0.5,rely=0.25,anchor=N)
 
 
 bejeadatok = []
-with open('bejelentkezes.txt','r', encoding='utf-8')as file:
+with open('./mini-kozossegi-app/code/levi/bejelentkezes.txt','r', encoding='utf-8')as file:
     for i in file:
         adat = i.strip().split(';')
         bejeadatok.append({
@@ -32,10 +32,16 @@ def bejelentkezes():
     ent = felhasznalo.get()
     jeent = jelszo.get()
     global bejeadatok
-    index = 0
+    x = 0
     for i in bejeadatok:
         if ent == i['felnev'] and jeent == i['jelszo']:
             fal.open_window(ent)
+            fal.posztolas()
+            léböl.config(text="Sikeres bejelentkezés")
+            x += 1
+    
+    if x == 0:
+        léböl.config(text="Sikertelen bejelentkezés!")
             
     
 
@@ -45,6 +51,9 @@ button = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentk
 button.place(relx=0.5, rely=0.5, anchor=N)
 btn2 = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
 btn2.place(relx=0.5,rely=0.7, anchor=N)
+léböl = Label(root, text="")
+léböl.place(relx=0.5,rely=0.85, anchor=N)
+
 
 
 
