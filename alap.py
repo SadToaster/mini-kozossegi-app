@@ -1,6 +1,7 @@
 from tkinter import *
 import os
 
+
 # Mindent widgetként adunk hozzá
 
 # Root -> a fő widget (a fő ablak)
@@ -40,7 +41,7 @@ def reg():
         jelszo=jelsz.get()
         jelszobiztos=jelszbiztos.get()
         adatok=[]
-        with open("./code/levi/bejelentkezes.txt", "r", encoding="utf-8") as file:
+        with open("./code/bejelentkezes.txt", "r", encoding="utf-8") as file:
             for sor in file:
                 adat = sor.strip().split(';')
                 adatok.append({
@@ -61,7 +62,7 @@ def reg():
         x=adatok[-1]['azonosito']+1
 
         if jelszo==jelszobiztos and vanvagynincs==False:
-            with open("./code/levi/bejelentkezes.txt", "a", encoding="utf-8") as file:
+            with open("./code/bejelentkezes.txt", "a", encoding="utf-8") as file:
                 print(f"\n{felhasznalonev};{jelszo};{x}", file=file)
             
         else:
@@ -74,7 +75,6 @@ def reg():
 
 def masikfilenyitas():
     print("gatya")
-
 
 appnev=Label(root, text="Miniapp")
 appnev.place(rely=0.2, relx=0.4)
