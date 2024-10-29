@@ -40,22 +40,30 @@ def reg():
         jelszo=jelsz.get()
         jelszobiztos=jelszbiztos.get()
         adatok=[]
-        with open("./code/levi/bejelentkezes.txt", "a", encoding="utf-8") as file:
+        with open("./code/levi/bejelentkezes.txt", "r", encoding="utf-8") as file:
             for sor in file:
-                adat = sor.strip().split('\t')
+                adat = sor.strip().split(';')
                 adatok.append({
                     'felhasznev' : adat[0],
-                    'versenyek_szama' : int(adat[1]),
-                    'gyozelem' : int(adat[2]),
-                    'dobogos' : int(adat[3]),
-                    'elsorol_indul' : int(adat[4]),
-                    'leggyorsabb_kor' : int(adat[5])
+                    'jelszo' : adat[1],
+                    'azonosito' : int(adat[2])
                 })
         
-        if jelszo==jelszobiztos:
+        vanvagynincs=False
+        
+        for i in adatok:
+            if felhasznalonev==i['felhasznev']:
+                vanvagynincs=True
+                break
+            else:
+                pass
+        
+        x=adatok[-1]['azonosito']+1
+
+        if jelszo==jelszobiztos and vanvagynincs==False:
             with open("./code/levi/bejelentkezes.txt", "a", encoding="utf-8") as file:
-                print(f"\n{felhasznalonev};{jelszo}", file=file)
-                
+                print(f"\n{felhasznalonev};{jelszo};{x}", file=file)
+            
         else:
             print("Ide majd egy messagebox, hogy nem jó")
 
