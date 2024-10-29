@@ -49,13 +49,11 @@ def tarplat():
     button_close.place(x=75, y=75)
 
 
-# Create the main window.
+
 felhasznalasi_lehetosegek = tk.Tk()
 felhasznalasi_lehetosegek.config(width=500, height=500)
 felhasznalasi_lehetosegek.title("Felhasználási lehetőségek")
-# Create a button inside the main window that
-# invokes the posztolas() function
-# when pressed.
+
 poszt = ttk.Button(
     felhasznalasi_lehetosegek,
     text="Posztolás",
