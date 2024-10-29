@@ -16,19 +16,19 @@ def reg():
     regiszt.maxsize(500,500)
     regiszt.title("Regisztráció")
     felhasznev = Entry(regiszt, width=50, bg="orange", borderwidth=10)
-    felhasznev.place(rely=0.3,relx=0.5, anchor=N)
+    felhasznev.place(rely=0.3,relx=0.2, anchor=W)
     jelsz = Entry(regiszt, width=50, bg="orange", borderwidth=10)
-    jelsz.place(rely=0.5,relx=0.5, anchor=N)
+    jelsz.place(rely=0.5,relx=0.2, anchor=W)
     jelszbiztos = Entry(regiszt, width=50, bg="orange", borderwidth=10)
-    jelszbiztos.place(rely=0.7,relx=0.5, anchor=N)
+    jelszbiztos.place(rely=0.7,relx=0.2, anchor=W)
     lbl = Label(regiszt, text="Regisztráció")
-    lbl.place(rely=0.1,relx=0.5, anchor=N)
+    lbl.place(rely=0.1,relx=0.2, anchor=W)
     lbl1 = Label(regiszt, text="Felhasználónév")
-    lbl1.place(rely=0.2,relx=0.2, anchor=N)
+    lbl1.place(rely=0.2,relx=0.2, anchor=W)
     lbl2 = Label(regiszt, text="Jelszó")
-    lbl2.place(rely=0.4,relx=0.2, anchor=N)
+    lbl2.place(rely=0.4,relx=0.2, anchor=W)
     lbl3 = Label(regiszt, text="Ismételje meg a jelszót:")
-    lbl3.place(rely=0.6,relx=0.2, anchor=N)
+    lbl3.place(rely=0.6,relx=0.2, anchor=W)
     btn2 = Button(regiszt, text="Bezárás", command=regiszt.destroy)
     btn2.place(rely=0.9, relx=0.5, anchor=N)
     
@@ -50,7 +50,7 @@ def reg():
                 })
         
         vanvagynincs=False
-        
+
         for i in adatok:
             if felhasznalonev==i['felhasznev']:
                 vanvagynincs=True
@@ -69,8 +69,6 @@ def reg():
 
 
 
-    btn3 = Button(regiszt, text="Regisztrálok", command=regisztralas)
-    btn3.place(rely=0.8, relx=0.5, anchor=N)
     btn3 = Button(regiszt, text="Regisztrálok", command=regisztralas)
     btn3.place(rely=0.8, relx=0.5, anchor=N)
 
