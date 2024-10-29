@@ -39,8 +39,21 @@ def reg():
         felhasznalonev=felhasznev.get()
         jelszo=jelsz.get()
         jelszobiztos=jelszbiztos.get()
+        adatok=[]
+        with open("./code/levi/bejelentkezes.txt", "a", encoding="utf-8") as file:
+            for sor in file:
+                adat = sor.strip().split('\t')
+                adatok.append({
+                    'felhasznev' : adat[0],
+                    'versenyek_szama' : int(adat[1]),
+                    'gyozelem' : int(adat[2]),
+                    'dobogos' : int(adat[3]),
+                    'elsorol_indul' : int(adat[4]),
+                    'leggyorsabb_kor' : int(adat[5])
+                })
+        
         if jelszo==jelszobiztos:
-            with open("./code/bejelentkezes.txt", "a", encoding="utf-8") as file:
+            with open("./code/levi/bejelentkezes.txt", "a", encoding="utf-8") as file:
                 print(f"\n{felhasznalonev};{jelszo}", file=file)
                 
         else:
