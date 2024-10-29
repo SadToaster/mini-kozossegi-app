@@ -19,7 +19,7 @@ jelszo.place(relx=0.5,rely=0.25,anchor=N)
 
 
 bejeadatok = []
-with open('./mini-kozossegi-app/code/levi/bejelentkezes.txt','r', encoding='utf-8')as file:
+with open('./mini-kozossegi-app/code/levi/bejelentkezes.txt','r', encoding='utf-8') as file:
     for i in file:
         adat = i.strip().split(';')
         bejeadatok.append({
