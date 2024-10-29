@@ -1,5 +1,6 @@
 from tkinter import *
 import os
+from subprocess import call
 
 
 # Mindent widgetként adunk hozzá
@@ -41,7 +42,7 @@ def reg():
         jelszo=jelsz.get()
         jelszobiztos=jelszbiztos.get()
         adatok=[]
-        with open("./code/bejelentkezes.txt", "r", encoding="utf-8") as file:
+        with open("./mini-kozossegi-app/code/bejelentkezes.txt", "r", encoding="utf-8") as file:
             for sor in file:
                 adat = sor.strip().split(';')
                 adatok.append({
@@ -73,20 +74,20 @@ def reg():
     btn3 = Button(regiszt, text="Regisztrálok", command=regisztralas)
     btn3.place(rely=0.8, relx=0.5, anchor=N)
 
-def masikfilenyitas():
-    print("gatya")
-
-def mycallback():
-    os.system('bejelentkezes.py')
+def open_py_file():
+    call(["python","./code/bejelentkezes.py"])
 
 appnev=Label(root, text="Miniapp")
 appnev.place(rely=0.2, relx=0.4)
 btn = Button(root, text="Regisztráció", command=reg)
 btn.place(rely=0.5, relx=0.2)
-#Tk.btn2 = Button(root, text="Bejelentkezés", command = lambda: os.system('bejelentkezes.py'))
-#Tk.btn2 = Button(root, text="Bejelentkezés", command = mycallback)
-Tk.btn2 = Button(root, text="Bejelentkezés", command = masikfilenyitas) #felső kettő megoldas lehet a masik python file mwgnyitásához
+
+Tk.btn2 = Button(root, text="Bejelentkezés", command = open_py_file)
 Tk.btn2.place(rely=0.5, relx=0.6)
 
-# Event loop létrehozása
 root.mainloop()
+
+"""ezek együtt fontosak
+from subprocess import call
+def open_py_file():
+    call(["python","./code/bejelentkezes.py"])"""
