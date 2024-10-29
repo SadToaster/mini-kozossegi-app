@@ -36,7 +36,6 @@ def bejelentkezes():
     for i in bejeadatok:
         if ent == i['felnev'] and jeent == i['jelszo']:
             fal.open_window(ent)
-            fal.posztolas()
             léböl.config(text="Sikeres bejelentkezés")
             x += 1
     
