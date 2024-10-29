@@ -76,12 +76,17 @@ def reg():
 def masikfilenyitas():
     print("gatya")
 
+def mycallback():
+    os.system('bejelentkezes.py')
+
 appnev=Label(root, text="Miniapp")
 appnev.place(rely=0.2, relx=0.4)
 btn = Button(root, text="Regisztráció", command=reg)
 btn.place(rely=0.5, relx=0.2)
-btn2 = Button(root, text="Bejelentkezés", command=masikfilenyitas)
-btn2.place(rely=0.5, relx=0.6)
+#Tk.btn2 = Button(root, text="Bejelentkezés", command = lambda: os.system('bejelentkezes.py'))
+#Tk.btn2 = Button(root, text="Bejelentkezés", command = mycallback)
+Tk.btn2 = Button(root, text="Bejelentkezés", command = masikfilenyitas) #felső kettő megoldas lehet a masik python file mwgnyitásához
+Tk.btn2.place(rely=0.5, relx=0.6)
 
 # Event loop létrehozása
 root.mainloop()
