@@ -21,6 +21,14 @@ def open_window(felnev):
         with open("./mini-kozossegi-app/code/fal.txt","a",encoding="utf-8")as file:
             print(felnev,getter,file=file)
             posz.config(text=file)
+            post = []
+        with open("./mini-kozossegi-app/code/fal.txt","r",encoding="utf-8")as fajl:
+            for i in fajl:
+                adat = i.strip().split(';')
+                post.append({
+                    'felnev' : str(adat[0]),
+                    'jelszo' : str(adat[1])
+                })
     entri.place(relx=0.25,rely=0.7,anchor=N)
     validalo = Button(root,text="Posztolás",padx=10, pady=10,command=posztolas)
     validalo.place(relx=0.1,rely=0.8,anchor=N)
