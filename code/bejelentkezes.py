@@ -19,7 +19,7 @@ jelszo.place(relx=0.5,rely=0.25,anchor=N)
 
 
 bejeadatok = []
-with open('./MINI-KOZOSSEGI-APP/code/bejelentkezes.txt','r', encoding='utf-8') as file:
+with open("./code/bejelentkezes.txt",'r', encoding='utf-8') as file:
     for i in file:
         adat = i.strip().split(';')
         bejeadatok.append({
@@ -28,7 +28,7 @@ with open('./MINI-KOZOSSEGI-APP/code/bejelentkezes.txt','r', encoding='utf-8') a
         })
 
 
-def bejelentkezes():
+def bejelent():
     ent = felhasznalo.get()
     jeent = jelszo.get()
     global bejeadatok
@@ -46,7 +46,7 @@ def bejelentkezes():
 
 
 
-button = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelentkezes, fg="black", bg="white")
+button = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelent, fg="black", bg="white")
 button.place(relx=0.5, rely=0.5, anchor=N)
 btn2 = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
 btn2.place(relx=0.5,rely=0.7, anchor=N)
