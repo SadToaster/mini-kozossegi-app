@@ -25,18 +25,18 @@ def open_window(felnev):
             for i in fajl:
                 adat = i.strip().split(';')
                 post.append({
-                    'felnev' : str(adat[0]),
+                    'fel' : str(adat[0]),
                     'po' : str(adat[1])
                 })
-        for a in range(post.lenght()):
-            posz.config(text=f"{post[a]["felnev"]} 99{post[a]["po"]}")
+        hossz = len(post)
+        for a in range(0,hossz-1):
+            posz.config(f"{post[a]['fel']}\n{post[a]['po']}")
     entri.place(relx=0.25,rely=0.7,anchor=N)
     validalo = Button(root,text="Posztolás",padx=10, pady=10,command=posztolas)
     validalo.place(relx=0.1,rely=0.8,anchor=N)
-def posztolas():
-    global entri
-    global posz
-    getter = entri.get()
-    posz = Label(text=getter)
+    gab = Button(root,text="Galéria",padx=10,pady=10,command=galeria,fg="black", bg="white")
+    gab.place(relx=0.8,rely=0.1,anchor=N)
+
+
 
 open_window("asd")
