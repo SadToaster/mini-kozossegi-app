@@ -1,6 +1,7 @@
 from tkinter import*
 from tkinter import Tk, BOTH
 from tkinter.ttk import Frame, Label, Style
+import profil
 
 
 def open_window(felnev):
@@ -20,23 +21,24 @@ def open_window(felnev):
         getter = entri.get()
         post = []
         with open("./mini-kozossegi-app/code/fal.txt","a",encoding="utf-8")as file:
-            print(felnev,getter,sep=';',file=file)
+            print(f"{felnev}\n{getter}",file=file)
         with open("./mini-kozossegi-app/code/fal.txt","r",encoding="utf-8")as fajl:
             for i in fajl:
-                adat = i.strip().split(';')
-                post.append({
-                    'fel' : str(adat[0]),
-                    'po' : str(adat[1])
-                })
-        hossz = len(post)
-        for a in range(0,hossz-1):
-            posz.config(f"{post[a]['fel']}\n{post[a]['po']}")
+                post.append(
+                    i
+                )
+        print(post)
+        kiiratas=str(post)
+        kiiratas=kiiratas.replace("[","")
+        kiiratas=kiiratas.replace("]","")
+        posz.config(text=kiiratas)
     entri.place(relx=0.25,rely=0.7,anchor=N)
     validalo = Button(root,text="Posztolás",padx=10, pady=10,command=posztolas)
     validalo.place(relx=0.1,rely=0.8,anchor=N)
-    gab = Button(root,text="Galéria",padx=10,pady=10,command=galeria,fg="black", bg="white")
+    def prgab():
+        profil.profil_galeria()
+    gab = Button(root,text="Profil/galéria",command=prgab,padx=10,pady=10,fg="black", bg="white")
     gab.place(relx=0.8,rely=0.1,anchor=N)
-
 
 
 open_window("asd")
