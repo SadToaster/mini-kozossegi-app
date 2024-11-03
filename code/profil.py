@@ -1,8 +1,7 @@
 from tkinter import*
 from tkinter import Tk, BOTH
 from tkinter.ttk import Frame, Label, Style
-from PIL import ImageTk, Image
-
+from PIL import Image, ImageTk
 
 def profil_galeria():
     root = Tk()
