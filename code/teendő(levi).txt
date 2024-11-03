@@ -1,0 +1,3 @@
+fal.py range text box
+profil.py kész legyen 
+dizájn alap, regisztráció
