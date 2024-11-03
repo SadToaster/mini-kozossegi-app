@@ -11,7 +11,9 @@ root.title("miniapp")
 root.minsize(500, 250)
 
 def reg():
-    regiszt = Toplevel()
+    root.destroy()
+    call(["python","./code/regisztracio.py"])
+    """regiszt = Toplevel()
     
 
     regiszt.minsize(500,500)
@@ -42,7 +44,7 @@ def reg():
         jelszo=jelsz.get()
         jelszobiztos=jelszbiztos.get()
         adatok=[]
-        with open("./mini-kozossegi-app/code/bejelentkezes.txt", "r", encoding="utf-8") as file:
+        with open("./code/bejelentkezes.txt", "r", encoding="utf-8") as file:
             for sor in file:
                 adat = sor.strip().split(';')
                 adatok.append({
@@ -73,9 +75,12 @@ def reg():
 
     btn3 = Button(regiszt, text="Regisztrálok", command=regisztralas)
     btn3.place(rely=0.8, relx=0.5, anchor=N)
+    ez már új pythonba van"""
 
 def open_py_file():
+    root.destroy()
     call(["python","./code/bejelentkezes.py"])
+    
 
 appnev=Label(root, text="Miniapp")
 appnev.place(rely=0.2, relx=0.4)

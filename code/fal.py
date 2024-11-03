@@ -31,7 +31,7 @@ def open_window(felnev):
         kiiratas=str(post)
         kiiratas=kiiratas.replace("[","")
         kiiratas=kiiratas.replace("]","")
-        posz.config(text=kiiratas)
+        posz.config(text='\n'.join(map(str, post)))
     entri.place(relx=0.25,rely=0.7,anchor=N)
     validalo = Button(root,text="Posztolás",padx=10, pady=10,command=posztolas)
     validalo.place(relx=0.1,rely=0.8,anchor=N)

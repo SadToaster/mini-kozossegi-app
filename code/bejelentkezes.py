@@ -19,12 +19,13 @@ jelszo.place(relx=0.5,rely=0.25,anchor=N)
 
 
 bejeadatok = []
-with open("./mini-kozossegi-app/code/bejelentkezes.txt",'r', encoding='utf-8') as file:
+with open("./code/bejelentkezes.txt",'r', encoding='utf-8') as file:
     for i in file:
         adat = i.strip().split(';')
         bejeadatok.append({
             'felnev' : str(adat[0]),
-            'jelszo' : str(adat[1])
+            'jelszo' : str(adat[1]),
+            'azonosito' : int(adat[2])
         })
 
 
@@ -37,7 +38,10 @@ def bejelent():
         if ent == i['felnev'] and jeent == i['jelszo']:
             fal.open_window(ent)
             léböl.config(text="Sikeres bejelentkezés")
+            with open("./code/aktualisfelhasznalo.txt","w",encoding="utf-8") as akfel:
+                print(f"{i['felnev']};{i['azonosito']}", file=akfel)
             x += 1
+            root.destroy()
     
     if x == 0:
         léböl.config(text="Sikertelen bejelentkezés!")
