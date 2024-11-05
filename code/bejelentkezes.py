@@ -1,7 +1,8 @@
 from tkinter import*
 from tkinter import Tk, BOTH
 from tkinter.ttk import Frame, Label, Style
-import fal
+import os
+from subprocess import call
 
 root = Tk()
 root.title("Mini-közösségi app")
@@ -12,11 +13,9 @@ felhasznalo = Entry(root, width=50, bg="white", fg="black", borderwidth=10)
 felhasznalo.insert(0, "Felhasználónév")
 felhasznalo.place(relx=0.5,rely=0.1,anchor=N)
 
-
 jelszo= Entry(root, width=50, bg="white",fg="black", borderwidth=10)
 jelszo.insert(0, "Jelszó")
 jelszo.place(relx=0.5,rely=0.25,anchor=N)
-
 
 bejeadatok = []
 with open("./code/bejelentkezes.txt",'r', encoding='utf-8') as file:
@@ -28,7 +27,6 @@ with open("./code/bejelentkezes.txt",'r', encoding='utf-8') as file:
             'azonosito' : int(adat[2])
         })
 
-
 def bejelent():
     ent = felhasznalo.get()
     jeent = jelszo.get()
@@ -36,28 +34,22 @@ def bejelent():
     x = 0
     for i in bejeadatok:
         if ent == i['felnev'] and jeent == i['jelszo']:
-            fal.open_window(ent)
-            léböl.config(text="Sikeres bejelentkezés")
+            call(["python","./code/fal.py"])
+            jo_e.config(text="Sikeres bejelentkezés")
             with open("./code/aktualisfelhasznalo.txt","w",encoding="utf-8") as akfel:
                 print(f"{i['felnev']};{i['azonosito']}", file=akfel)
             x += 1
             root.destroy()
     
     if x == 0:
-        léböl.config(text="Sikertelen bejelentkezés!")
+        jo_e.config(text="Sikertelen bejelentkezés!")
             
-    
 
-
-
-button = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelent, fg="black", bg="white")
-button.place(relx=0.5, rely=0.5, anchor=N)
-btn2 = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
-btn2.place(relx=0.5,rely=0.7, anchor=N)
-léböl = Label(root, text="")
-léböl.place(relx=0.5,rely=0.85, anchor=N)
-
-
-
+bejelentkezobt = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelent, fg="black", bg="white")
+bejelentkezobt.place(relx=0.5, rely=0.5, anchor=N)
+bezaras = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
+bezaras.place(relx=0.5,rely=0.7, anchor=N)
+jo_e = Label(root, text="")
+jo_e.place(relx=0.5,rely=0.85, anchor=N)
 
 root.mainloop()
