@@ -51,7 +51,3 @@ def open_window(felnev):
     gab.place(relx=0.85,rely=0.1,anchor=N)
     bezaras = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
     bezaras.place(relx=0.85,rely=0.8, anchor=N)
-    
-
-
-open_window("asd")
