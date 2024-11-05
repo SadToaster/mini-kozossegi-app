@@ -1,7 +1,9 @@
 from tkinter import*
 from tkinter import Tk, BOTH
 from tkinter.ttk import Frame, Label, Style
-import fal
+import os
+from subprocess import call
+import proba
 
 root = Tk()
 root.title("Mini-közösségi app")
@@ -33,7 +35,7 @@ def bejelent():
     x = 0
     for i in bejeadatok:
         if ent == i['felnev'] and jeent == i['jelszo']:
-            fal.open_window(ent)
+            proba.open_window(ent)
             jo_e.config(text="Sikeres bejelentkezés")
             with open("./code/aktualisfelhasznalo.txt","w",encoding="utf-8") as akfel:
                 print(f"{i['felnev']};{i['azonosito']}", file=akfel)

@@ -20,6 +20,8 @@ def open():
 
     image_list = [tunner1, tunner2, tunner3, tunner4, tunner5]
 
+    global counter
+
     counter = 0
 
     def forwChangeImage():
@@ -29,7 +31,7 @@ def open():
         else:
             counter = 0
         imageLabel.config(image=image_list[counter])
-    
+        
     def backChangeImage():
         global counter
         if abs(counter) < len(image_list) - 1:
@@ -37,14 +39,14 @@ def open():
         else:
             counter = 0
         imageLabel.config(image=image_list[counter])
-    
+        
 
     imageLabel = Label(root, image=tunner1)
     imageLabel.place(relx=0.32,rely=0.06,anchor=N)
     next1 = Button(root, text="következő", width=20, height=2, bg="white", fg="black", command=forwChangeImage)
     previous1 = Button(root, text="előző", width=20, height=2, bg="white", fg="black", command=backChangeImage)
-    next1.place(relx=0.09,rely=0.25,anchor=N)
-    previous1.place(relx=0.55,rely=0.25,anchor=N)
+    next1.place(relx=0.55,rely=0.25,anchor=N)
+    previous1.place(relx=0.09,rely=0.25,anchor=N)
 
     levilabel = Label(root,text="Nagy Levente")
     levilabel.place(relx=0.32,rely=0.5,anchor=N)
@@ -59,6 +61,8 @@ def open():
 
     image_listlevi = [levi1, levi2, levi3, levi4, levi5]
 
+    global counterlevi
+
     counterlevi = 0
 
     def forwChangeImagelevi():
@@ -68,7 +72,7 @@ def open():
         else:
             counterlevi = 0
         imageLabellevi.config(image=image_listlevi[counterlevi])
-    
+        
     def backChangeImagelevi():
         global counterlevi
         if abs(counterlevi) < len(image_listlevi) - 1:
@@ -76,12 +80,12 @@ def open():
         else:
             counterlevi = 0
         imageLabellevi.config(image=image_listlevi[counterlevi])
-    
+        
 
     imageLabellevi = Label(root, image=levi2)
     imageLabellevi.place(relx=0.32,rely=0.54,anchor=N)
     next2 = Button(root, text="következő", width=20, height=2, bg="white", fg="black", command=forwChangeImagelevi)
     previous2 = Button(root, text="előző", width=20, height=2, bg="white", fg="black", command=backChangeImagelevi)
-    next2.place(relx=0.09,rely=0.7,anchor=N)
-    previous2.place(relx=0.55,rely=0.7,anchor=N)
+    next2.place(relx=0.55,rely=0.7,anchor=N)
+    previous2.place(relx=0.09,rely=0.7,anchor=N)
     root.mainloop()
