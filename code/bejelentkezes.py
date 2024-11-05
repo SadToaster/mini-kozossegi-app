@@ -34,12 +34,12 @@ def bejelent():
     x = 0
     for i in bejeadatok:
         if ent == i['felnev'] and jeent == i['jelszo']:
-            call(["python","./code/fal.py"])
             jo_e.config(text="Sikeres bejelentkezés")
             with open("./code/aktualisfelhasznalo.txt","w",encoding="utf-8") as akfel:
                 print(f"{i['felnev']};{i['azonosito']}", file=akfel)
             x += 1
             root.destroy()
+            call(["python","./code/fal.py"])
     
     if x == 0:
         jo_e.config(text="Sikertelen bejelentkezés!")

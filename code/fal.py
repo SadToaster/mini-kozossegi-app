@@ -53,8 +53,8 @@ def posztolas():
 validalo = Button(root,text="Posztolás",padx=10, pady=10,command=posztolas)
 validalo.place(relx=0.1,rely=0.8,anchor=N)
 def open_profile3():
-    call(["python","./code/profil.py"])
     root.destroy()
+    call(["python","./code/profil.py"])
 gab = tk.Button(root,text="Profil/galéria",command=open_profile3,padx=10,pady=10,fg="black", bg="white")
 gab.place(relx=0.85,rely=0.1,anchor=N)
 bezaras = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
