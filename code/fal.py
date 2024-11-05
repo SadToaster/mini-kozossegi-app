@@ -9,12 +9,13 @@ from subprocess import call
 
 
 def open_window(felnev):
-    global entri
-    global posz
     root = Tk()
     root.title("Közösségi fal")
     root.geometry("800x600")
     root.configure(background="cadetblue")
+    global entri
+    global posz
+    global post
     cim = Label(root, text="Posztoló fal:")
     cim.place(relx=0.1, rely=0.1, anchor=N)
     entri = Entry(root, width=50, bg="white", fg="black", borderwidth=10)
@@ -26,7 +27,7 @@ def open_window(felnev):
         getter = entri.get()
         global post
         post = []
-        posz = tk.Label(root, text="Posztolás:")
+        posz = tk.Label(root, text="")
         posz.place(relx=0.1,rely=10000,anchor=N)
         with open("./code/fal.txt","a",encoding="utf-8")as file:
             print(f"{felnev}\n{getter}",file=file)
@@ -44,6 +45,7 @@ def open_window(felnev):
         listbox.insert(tk.END, *(post[i] for i in range(len(post))))
         listbox.place(rely=0.4, relx=0.05, anchor=W, height=250)
         entri.delete(0, END)
+
     validalo = Button(root,text="Posztolás",padx=10, pady=10,command=posztolas)
     validalo.place(relx=0.1,rely=0.8,anchor=N)
     def open_profile3():
