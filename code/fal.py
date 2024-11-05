@@ -20,9 +20,9 @@ def open_window(felnev):
         global posz
         getter = entri.get()
         post = []
-        with open("./mini-kozossegi-app/code/fal.txt","a",encoding="utf-8")as file:
+        with open("./code/fal.txt","a",encoding="utf-8")as file:
             print(f"{felnev}\n{getter}",file=file)
-        with open("./mini-kozossegi-app/code/fal.txt","r",encoding="utf-8")as fajl:
+        with open("./code/fal.txt","r",encoding="utf-8")as fajl:
             for i in fajl:
                 post.append(
                     i
