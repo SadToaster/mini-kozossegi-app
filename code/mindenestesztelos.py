@@ -41,7 +41,7 @@ m1.add(m2)
 top = Scale(m2, orient=HORIZONTAL)
 m2.add(top)
 mainloop()"""
-'''import tkinter as tk
+import tkinter as tk
 from tkinter import ttk
 
 def display_range(a, b):
@@ -55,8 +55,8 @@ listbox.pack()
 label = ttk.Label()
 label.pack()
 root.mainloop()
-'''
-from tkinter import *
+
+"""from tkinter import *
 
 
 # Creating the root window 
@@ -92,5 +92,5 @@ listbox.config(yscrollcommand = scrollbar.set)
 # we need to have a vertical view 
 scrollbar.config(command = listbox.yview) 
 
-root.mainloop() 
+root.mainloop() """
 

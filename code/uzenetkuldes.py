@@ -37,6 +37,7 @@ def on_select(event):
     global selected_item
     selected_item = combo_box.get()
     label.config(text="Selected Item: " + selected_item)
+    label.place(rely=0.4, relx=0.1, anchor=N)
     global chatazononosito
     chatazononosito=azonosito**azonosito+mindenkiazonositoja[mindenkineve.index(selected_item)]**mindenkiazonositoja[mindenkineve.index(selected_item)]
     uzenetek=[]
@@ -51,7 +52,7 @@ def on_select(event):
     def display_range(a, b):
         label["text"] = f"Range: {a}-{b}"
     listbox = tk.Listbox(yscrollcommand=display_range, width=100)
-    listbox.insert(tk.END, *(uzenetek[i] for i in range(len(uzenetek))))
+    listbox.insert(tk.END, *(uzenetek[i] for i in range(0,len(uzenetek),1)))
     listbox.place(rely=0.5, relx=0.2, anchor=W, height=250)   
     
 
@@ -81,7 +82,7 @@ def kuld():
     def display_range(a, b):
         label["text"] = f"Range: {a}-{b}"
     listbox = tk.Listbox(yscrollcommand=display_range, width=100)
-    listbox.insert(tk.END, *(uzenetek[i] for i in range(len(uzenetek))))
+    listbox.insert(tk.END, *(uzenetek[i] for i in range(0,len(uzenetek),1)))
     listbox.place(rely=0.5, relx=0.2, anchor=W, height=250) 
       
 
