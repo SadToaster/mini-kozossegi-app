@@ -40,9 +40,7 @@ def posztolas():
             post.append(
                 i
             )
-    kiiratas=str(post)
-    kiiratas=kiiratas.replace("[","")
-    kiiratas=kiiratas.replace("]","")
+    
     def display_range(a, b):
         posz["text"] = f"Range: {a}-{b}"
     listbox = tk.Listbox(yscrollcommand=display_range, width=80)

@@ -69,6 +69,7 @@ def kuld():
     global chatazononosito
     with open("./code/uzenetek.txt","a",encoding="utf-8") as file:
         print (f"{felhasznalo}: {uzenet.get()};{chatazononosito}", file=file)
+    uzenet.delete(0, END)
     with open("./code/uzenetek.txt","r",encoding="utf-8") as kiiras:
         for x in kiiras:
             adat = x.split(';')

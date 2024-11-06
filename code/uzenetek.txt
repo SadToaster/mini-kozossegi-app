@@ -1,4 +1,4 @@
 Válaszd ki a beszélgető partnered;0
 újtag: működik;28
-újtag:  az üzenet;31
+újtag:  az üzenet;28
 újtag: továbbítás;28

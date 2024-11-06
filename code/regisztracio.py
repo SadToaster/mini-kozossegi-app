@@ -47,6 +47,9 @@ def regisztralas():
             print(f"\n{felhasznalonev};{jelszo};{x}", file=file)
         sikornemsik.config(text="Sikeres regisztráció!")
         vanvagynincs2=False
+        felhasznev.delete(0, END)
+        jelsz.delete(0, END)
+        jelszbiztos.delete(0, END)
         
             
     if vanvagynincs2:
