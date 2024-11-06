@@ -1,4 +1,5 @@
 Levi69420;420;1
 Máté;1;2
 újtag;3;3
-Rasch;;4
+Rasch;kutya;4
+Én;11;5

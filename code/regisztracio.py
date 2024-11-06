@@ -9,6 +9,8 @@ def regisztbezar():
     
     
     
+sikornemsik=Label(regiszt, text="")
+sikornemsik.place(rely=0.75,relx=0.5,anchor=N)
 
 def regisztralas():
     felhasznalonev=felhasznev.get()
@@ -20,27 +22,28 @@ def regisztralas():
             adat = sor.strip().split(';')
             adatok.append({
                     'felhasznev' : adat[0],
-                    'jelszo' : adat[1],
                     'azonosito' : int(adat[2])
                 })
         
-    vanvagynincs=False
+    vanvagynincs=True
 
     for i in adatok:
         if felhasznalonev==i['felhasznev']:
-            vanvagynincs=True
+            vanvagynincs=False
+            sikornemsik.config(text="Márlétezik ilyen nevű felhasználó")
             break
         else:
             pass
         
     x=adatok[-1]['azonosito']+1
 
-    if jelszo==jelszobiztos and vanvagynincs==False:
+    if jelszo==jelszobiztos and vanvagynincs:
         with open("./code/bejelentkezes.txt", "a", encoding="utf-8") as file:
             print(f"\n{felhasznalonev};{jelszo};{x}", file=file)
+        sikornemsik.config(text="Sikeres regisztráció!")
             
     else:
-        print("Ide majd egy messagebox, hogy nem jó")
+        sikornemsik.config(text="Nem egyezik a jelszó a két mezőben.")
 
 
 regiszt.minsize(500,500)
@@ -61,8 +64,9 @@ lbl2.place(rely=0.4,relx=0.2, anchor=W)
 lbl3 = Label(regiszt, text="Ismételje meg a jelszót:")
 lbl3.place(rely=0.6,relx=0.2, anchor=W)
 btn2 = Button(regiszt, text="Bezárás", command=regisztbezar)
-btn2.place(rely=0.9, relx=0.5, anchor=N)
+btn2.place(rely=0.91, relx=0.5, anchor=N)
 btn3 = Button(regiszt, text="Regisztrálok", command=regisztralas)
-btn3.place(rely=0.8, relx=0.5, anchor=N)
+btn3.place(rely=0.83, relx=0.5, anchor=N)
+
 
 regiszt.mainloop()
