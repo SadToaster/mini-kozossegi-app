@@ -55,8 +55,16 @@ validalo.place(relx=0.1,rely=0.8,anchor=N)
 def open_profile3():
     root.destroy()
     call(["python","./code/profil.py"])
+def open_uzen():
+    root.destroy()
+    call(["python","./code/uzenetkuldes.py"])
 gab = tk.Button(root,text="Profil/galéria",command=open_profile3,padx=10,pady=10,fg="black", bg="white")
 gab.place(relx=0.85,rely=0.1,anchor=N)
-bezaras = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
+uzenetekb = tk.Button(root,text="Chat felület",command=open_uzen,padx=10,pady=10,fg="black", bg="white")
+uzenetekb.place(relx=0.85,rely=0.25,anchor=N)
+def kijelent():
+    root.destroy()
+    call(["python","./code/bejelentkezes.py"])
+bezaras = Button(root, text="Kijelentkezés",padx=10,pady=10,fg="red",bg="white" ,command=kijelent)
 bezaras.place(relx=0.85,rely=0.8, anchor=N)
 root.mainloop()

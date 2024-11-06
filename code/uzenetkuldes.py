@@ -3,6 +3,7 @@ from tkinter import Tk, BOTH
 from tkinter.ttk import Frame, Label, Style
 import tkinter as tk
 from tkinter import ttk
+from subprocess import call
 
 
 
@@ -85,6 +86,13 @@ def kuld():
 
 kuldesbtn=Button(root, textvariable="📡",width=3, command=kuld)
 kuldesbtn.place(rely=0.95, relx=0.96,anchor=W)
+
+def visszafal():
+    root.destroy()
+    call(["python","./code/fal.py"])
+
+viszfalb= tk.Button(root,text="Vissza a falra",command=visszafal,padx=10,pady=10,fg="black", bg="white")
+viszfalb.place(relx=0.1,rely=0.01,anchor=N)
 
 """
 x=-1

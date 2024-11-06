@@ -30,19 +30,25 @@ def regisztralas():
     for i in adatok:
         if felhasznalonev==i['felhasznev']:
             vanvagynincs=False
-            sikornemsik.config(text="Márlétezik ilyen nevű felhasználó")
+            sikornemsik.config(text="Már létezik ilyen nevű felhasználó")
+            vanvagynincs2=False
             break
         else:
+            vanvagynincs2=True
             pass
         
     x=adatok[-1]['azonosito']+1
+
+    
 
     if jelszo==jelszobiztos and vanvagynincs:
         with open("./code/bejelentkezes.txt", "a", encoding="utf-8") as file:
             print(f"\n{felhasznalonev};{jelszo};{x}", file=file)
         sikornemsik.config(text="Sikeres regisztráció!")
+        vanvagynincs2=False
+        
             
-    else:
+    if vanvagynincs2:
         sikornemsik.config(text="Nem egyezik a jelszó a két mezőben.")
 
 

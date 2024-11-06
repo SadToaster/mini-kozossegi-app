@@ -1,5 +1,6 @@
 from tkinter import*
 from PIL import Image, ImageTk
+from subprocess import call
 
 
 root = Tk()
@@ -88,4 +89,10 @@ next2 = Button(root, text="következő", width=20, height=2, bg="white", fg="bla
 previous2 = Button(root, text="előző", width=20, height=2, bg="white", fg="black", command=backChangeImagelevi)
 next2.place(relx=0.55,rely=0.7,anchor=N)
 previous2.place(relx=0.09,rely=0.7,anchor=N)
+def visszafal():
+    root.destroy()
+    call(["python","./code/fal.py"])
+
+viszfalb= Button(root,text="Vissza a falra",command=visszafal,padx=10,pady=10,fg="black", bg="white")
+viszfalb.place(relx=0.1,rely=0.01,anchor=N)
 root.mainloop()

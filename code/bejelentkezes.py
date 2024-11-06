@@ -34,7 +34,6 @@ def bejelent():
     x = 0
     for i in bejeadatok:
         if ent == i['felnev'] and jeent == i['jelszo']:
-            jo_e.config(text="Sikeres bejelentkezés")
             with open("./code/aktualisfelhasznalo.txt","w",encoding="utf-8") as akfel:
                 print(f"{i['felnev']};{i['azonosito']}", file=akfel)
             x += 1
@@ -47,7 +46,10 @@ def bejelent():
 
 bejelentkezobt = Button(root, text="Bejelentkezés", padx=10, pady=10, command=bejelent, fg="black", bg="white")
 bejelentkezobt.place(relx=0.5, rely=0.5, anchor=N)
-bezaras = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=root.destroy)
+def viszal():
+    root.destroy()
+    call(["python","./code/alap.py"])
+bezaras = Button(root, text="X",padx=10,pady=10,fg="red",bg="white" ,command=viszal)
 bezaras.place(relx=0.5,rely=0.7, anchor=N)
 jo_e = Label(root, text="")
 jo_e.place(relx=0.5,rely=0.85, anchor=N)
