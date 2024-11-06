@@ -2,6 +2,7 @@ from tkinter import *
 from subprocess import call
 
 regiszt = Tk()
+regiszt.configure(background="cadetblue")
     
 def regisztbezar():
     regiszt.destroy()
@@ -49,11 +50,11 @@ def regisztralas():
 regiszt.minsize(500,500)
 regiszt.maxsize(500,500)
 regiszt.title("Regisztráció")
-felhasznev = Entry(regiszt, width=50, bg="orange", borderwidth=10)
+felhasznev = Entry(regiszt, width=50, bg="white", borderwidth=10)
 felhasznev.place(rely=0.3,relx=0.2, anchor=W)
-jelsz = Entry(regiszt, width=50, bg="orange", borderwidth=10)
+jelsz = Entry(regiszt, width=50, bg="white", borderwidth=10)
 jelsz.place(rely=0.5,relx=0.2, anchor=W)
-jelszbiztos = Entry(regiszt, width=50, bg="orange", borderwidth=10)
+jelszbiztos = Entry(regiszt, width=50, bg="white", borderwidth=10)
 jelszbiztos.place(rely=0.7,relx=0.2, anchor=W)
 lbl = Label(regiszt, text="Regisztráció")
 lbl.place(rely=0.1,relx=0.2, anchor=W)

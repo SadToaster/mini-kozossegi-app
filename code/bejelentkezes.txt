@@ -3,3 +3,4 @@ Máté;1;2
 újtag;3;3
 Rasch;kutya;4
 Én;11;5
+kutya;420;6
