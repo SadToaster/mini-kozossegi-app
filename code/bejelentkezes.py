@@ -6,7 +6,8 @@ from subprocess import call
 
 root = Tk()
 root.title("Mini-közösségi app")
-root.geometry("800x400")
+root.maxsize(800,400)
+root.minsize(800,400)
 root.configure(background="cadetblue")
 
 felhasznalo = Entry(root, width=50, bg="white", fg="black", borderwidth=10)

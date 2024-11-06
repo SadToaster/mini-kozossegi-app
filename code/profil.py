@@ -5,7 +5,8 @@ from subprocess import call
 
 root = Tk()
 root.title("Profil/Galéria")
-root.geometry("1100x750")
+root.maxsize(1100,750)
+root.minsize(1100,750)
 root.configure(background="cadetblue")
 
 tunnerlabel = Label(root,text="Tunner Máté Albert")
