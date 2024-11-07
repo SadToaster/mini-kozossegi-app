@@ -31,25 +31,34 @@ def regisztralas():
     for i in adatok:
         if felhasznalonev==i['felhasznev']:
             vanvagynincs=False
-            sikornemsik.config(text="Márlétezik ilyen nevű felhasználó")
+            sikornemsik.config(text="Már létezik ilyen nevű felhasználó")
+            vanvagynincs2=False
             break
         else:
+            vanvagynincs2=True
             pass
         
     x=adatok[-1]['azonosito']+1
+
+    
 
     if jelszo==jelszobiztos and vanvagynincs:
         with open("./code/bejelentkezes.txt", "a", encoding="utf-8") as file:
             print(f"\n{felhasznalonev};{jelszo};{x}", file=file)
         sikornemsik.config(text="Sikeres regisztráció!")
+        vanvagynincs2=False
+        felhasznev.delete(0, END)
+        jelsz.delete(0, END)
+        jelszbiztos.delete(0, END)
+        
             
-    else:
+    if vanvagynincs2:
         sikornemsik.config(text="Nem egyezik a jelszó a két mezőben.")
 
 
 regiszt.minsize(500,500)
 regiszt.maxsize(500,500)
-regiszt.title("Regisztráció")
+regiszt.title("CsoPort")
 felhasznev = Entry(regiszt, width=50, bg="white", borderwidth=10)
 felhasznev.place(rely=0.3,relx=0.2, anchor=W)
 jelsz = Entry(regiszt, width=50, bg="white", borderwidth=10)
