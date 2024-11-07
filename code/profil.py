@@ -10,7 +10,7 @@ root.configure(background="cadetblue")
 
 tunnerlabel = Label(root,text="Tunner Máté Albert")
 tunnerlabel.place(relx=0.32,rely=0.02,anchor=N)
-tunnerbemutatkozas = Label(root, text="Tunner Máté (alias Mr. szomorú)\n-a Veszprém SZC Ipari Technikumba jár informatika szakra\n-Hobbija az aktív sportolás és az olvasás.\n-Szereti: a könnyed, de nem üres beszédet\n-Nem szereti: a hivalkodó embereket",justify=LEFT)
+tunnerbemutatkozas = Label(root, text="Tunner Máté Albert(alias Mr. szomorú)\n-a Veszprém SZC Ipari Technikumba jár informatika szakra\n-Hobbija az aktív sportolás és az olvasás.\n-Szereti: a könnyed, de nem üres beszédet\n-Nem szereti: a hivalkodó embereket",justify=LEFT)
 tunnerbemutatkozas.place(relx=0.8,rely=0.21,anchor=N)
 
 tunner1 = ImageTk.PhotoImage(Image.open("./code/img/tunner8.jpg").resize((290, 290)))
