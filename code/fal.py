@@ -15,7 +15,9 @@ root.minsize(800, 600)
 root.maxsize(800, 600)
 root.configure(background="cadetblue")
 global posz
+posz = tk.Label(root, text="")
 global post
+post=[]
 cim = Label(root, text="Posztoló fal:")
 cim.place(relx=0.1, rely=0.1, anchor=N)
 entri = Entry(root, width=50, bg="white", fg="black", borderwidth=10)
@@ -47,6 +49,20 @@ def posztolas():
     listbox.insert(tk.END, *(post[i] for i in range(len(post))))
     listbox.place(rely=0.4, relx=0.05, anchor=W, height=250)
     entri.delete(0, END)
+    listbox.yview(END)
+
+with open("./code/fal.txt","r",encoding="utf-8")as fajl:
+        for i in fajl:
+            post.append(
+                i
+            )
+
+def display_range(a, b):
+    posz["text"] = f"Range: {a}-{b}"
+listbox = tk.Listbox(yscrollcommand=display_range, width=80)
+listbox.insert(tk.END, *(post[i] for i in range(len(post))))
+listbox.place(rely=0.4, relx=0.05, anchor=W, height=250)
+listbox.yview(END)
 
 validalo = Button(root,text="Posztolás",padx=10, pady=10,command=posztolas)
 validalo.place(relx=0.1,rely=0.8,anchor=N)

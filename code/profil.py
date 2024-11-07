@@ -4,7 +4,7 @@ from subprocess import call
 
 
 root = Tk()
-root.title("Profil/Galéria")
+root.title("CsoPort")
 root.maxsize(1100,750)
 root.minsize(1100,750)
 root.configure(background="cadetblue")

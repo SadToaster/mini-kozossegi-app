@@ -5,7 +5,7 @@ import os
 from subprocess import call
 
 root = Tk()
-root.title("Mini-közösségi app")
+root.title("CsoPort")
 root.maxsize(800,400)
 root.minsize(800,400)
 root.configure(background="cadetblue")

@@ -58,7 +58,7 @@ def regisztralas():
 
 regiszt.minsize(500,500)
 regiszt.maxsize(500,500)
-regiszt.title("Regisztráció")
+regiszt.title("CsoPort")
 felhasznev = Entry(regiszt, width=50, bg="white", borderwidth=10)
 felhasznev.place(rely=0.3,relx=0.2, anchor=W)
 jelsz = Entry(regiszt, width=50, bg="white", borderwidth=10)
